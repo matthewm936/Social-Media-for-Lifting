@@ -127,13 +127,7 @@ struct ProfileView: View {
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                 .padding(.top, 20)
-            
-            // Change Profile Picture Text
-            Text("Change Profile Picture")
-                .font(.caption)
-                .foregroundColor(.blue)
-                .padding(.top, 5)
-                .padding(.bottom, 20)
+    
 
             // Username
             Text(username)
