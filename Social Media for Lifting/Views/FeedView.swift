@@ -66,6 +66,13 @@ struct FeedView: View {
     }
 }
 
+struct ScrollViewOffsetKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
 struct Feed_View: PreviewProvider {
     static var previews: some View {
         FeedView()

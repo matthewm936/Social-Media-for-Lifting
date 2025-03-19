@@ -1,39 +1,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isSignedIn") private var isSignedIn = false  // Persistent login state
+
     var body: some View {
-        TabView {
-            FeedView()
-                .tabItem {
-                    Label("Feed", systemImage: "house")
-                }
+        if isSignedIn {
+            TabView {
+                FeedView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
 
-            ShareLiftView()
-                .tabItem {
-                    Label("Share Lift", systemImage: "plus.app")
-                }
+                ShareLiftView()
+                    .tabItem {
+                        Label("Share Lift", systemImage: "plus.app")
+                    }
 
-            AddFriendsView()
-                .tabItem {
-                    Label("Add Friends", systemImage: "magnifyingglass")
-                }
+                AddFriendsView()
+                    .tabItem {
+                        Label("Add Friends", systemImage: "magnifyingglass")
+                    }
 
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
+            }
+        } else {
+            SignInView()
         }
     }
 }
 
-struct ScrollViewOffsetKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
-// Preview for Xcode canvas
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
