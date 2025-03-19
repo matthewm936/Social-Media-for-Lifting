@@ -1,10 +1,3 @@
-//
-//  SignInView.swift
-//  Social Media for Lifting
-//
-//  Created by Matthew on 3/19/25.
-//
-
 import SwiftUI
 import AuthenticationServices
 

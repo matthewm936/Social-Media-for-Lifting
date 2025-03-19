@@ -8,7 +8,7 @@ struct ShareLiftView: View {
     @State private var gymDetails = ""
     
     // New state for workout type and time
-    @State private var workoutType: String = "Choose your lifting style" // Default to 'Regular'
+    @State private var workoutType: String = "Choose your lifting style" // Default
     @State private var currentTime = Date() // Use Date for time, so we can update it
     @State private var showTimePicker = false // Toggle for showing time picker
     

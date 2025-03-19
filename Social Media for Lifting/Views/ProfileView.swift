@@ -1,17 +1,10 @@
-//
-//  ProfileView.swift
-//  Social Media for Lifting
-//
-//  Created by Matthew on 3/19/25.
-//
-
 import PhotosUI
 import SwiftUI
 
 
 struct ProfileView: View {
     @State private var username = "User Name"
-    @State private var bio = "My bio"
+    @State private var bio = "Bio..."
     @State private var followers = 250
     @State private var following = 180
     @State private var profileImage: Image? = Image(systemName: "person.circle.fill") // Placeholder
